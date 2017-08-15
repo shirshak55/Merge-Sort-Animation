@@ -1,0 +1,285 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Mini Project Demonstration">
+    <meta name="author" content="Shirshak Bajgain">
+
+    <title>Mini Project</title>
+
+    <link href="assets/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <link href="assets/css/font-awesome.min.css" rel="stylesheet" media="screen">
+    <link href="assets/css/simple-line-icons.css" rel="stylesheet" media="screen">
+    <link href="assets/css/animate.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <script src="assets/js/modernizr.custom.js"></script>
+</head>
+<body>
+
+    <div id="preloader">
+        <div id="status"></div>
+    </div>
+
+    <section id="home" class="pfblock-image screen-height">
+        <div class="home-overlay"></div>
+        <div class="intro">
+            <div class="start">Hello, This is CE 2nd Year Project on</div>
+            <h1>Quick And Merge Sort</h1>
+            <div class="start">Showing animation on quick sort and merge sort to make it easy to understand</div>
+        </div>
+
+        <a href="#description">
+            <div class="scroll-down">
+                <span>
+                    <i class="fa fa-angle-down fa-2x"></i>
+                </span>
+            </div>
+        </a>
+    </section>
+
+    <header class="header">
+        <nav class="navbar navbar-custom" role="navigation">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#custom-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="index.html">Mini Project</a>
+                </div>
+
+                <div class="collapse navbar-collapse" id="custom-collapse">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#description">Description</a></li>
+                        <li><a href="#quick-sort">Quick Sort</a></li>
+                        <li><a href="#merge-sort">Merge Sort</a></li>
+                        <li><a href="#teams">Teams</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <section id="description" class="pfblock pfblock-gray">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-sm-10 col-sm-offset-2">
+                    <div class="pfblock-header wow fadeInUp">
+                        <h2 class="pfblock-title">Description of our Project</h2>
+                        <div class="pfblock-line"></div>
+                        <div class="pfblock-subtitle">
+                            They are the one of the most efficient sorting algorithm. They are so good that in many programming language calling sort function will use quick sort or merge sort to sort the data.
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="quick-sort" class="pfblock">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-sm-12">
+
+                    <div class="pfblock-header wow fadeInUp">
+                        <h2 class="pfblock-title">Quick Sort</h2>
+                        <div class="pfblock-line"></div>
+                        <div class="pfblock-subtitle">
+                            Quick Sort is one of the most efficient Sorting algorithm
+                        </div>
+                    </div>
+
+                    <div class="pfblock-subtitle">
+                        <p>Quick Sort is the algorithm which takes arrays like this:</p>
+
+                        <div id="ex1"></div>
+
+                        <p>And sort it to like this</p>
+
+                        <div id="ex2"></div>
+
+                        <h2>Principle of Quick Sort</h2>
+                        <ul>
+                            <li>Pick a Pivot Element</li>
+                            <li>
+                                Partitioning Array into three parts:
+                                <ul>
+                                    <li>First part: all elements in this part is less than the pivot.</li>
+                                    <li>Second part: the pivot itself (only one element!)</li>
+                                    <li>Third part: all elements in this part is greater than or equal to the pivot.</li>
+                                </ul>
+                            </li>
+                            <li>Then, apply the quicksort algorithm to the first and the third part. (recursively)</li>
+                        </ul>
+
+                        <div id="ex3"></div>
+
+                        <h2>Partitioning</h2>
+
+                        <p>An important part of this algorithm is the partitioning — how it partitions an array into 3 parts in-place, that is,
+                        without creating extra arrays (like in mergesort). You can do it with some clever algorithm.</p>
+
+                        <p>Here is one algorithm to partition the array, which I try to present in a way that&rsquo;s as easy to understand as possible.
+                        We&rsquo;ll try to partition the array like a card game.</p>
+
+                        <ul>
+                        <li>First, assume that the pivot is the leftmost element.</li>
+                        <li>Flip all the other cards down.</li>
+                        <li>Then, open each card from left to right.
+
+                        <ul>
+                        <li>If you find a card that is <i>less than</i> the pivot:
+
+                        <ul>
+                        <li>Swap that card with the card that was first opened (the leftmost open card), and close that leftmost card.</li>
+                        <li>Also take note of the last closed card.</li>
+                        </ul></li>
+                        <li>Otherwise, continue opening the next card.</li>
+                        </ul></li>
+                        <li>Swap the last closed card with the pivot (if any).</li>
+                        <li>Open all cards&hellip; You will see that the array is already partitioned!</li>
+                        </ul>
+
+                        <div id="ex4"></div>
+
+                        <h2>Picking the Pivot</h2>
+
+                        <p>For simplicity, we picked the leftmost element as the pivot, but this isn&rsquo;t always good. Let&rsquo;s consider this case where the
+                        array is reverse-sorted:</p>
+
+                        <div id="ex5" style="min-height:360px"></div>
+
+                        <p>As you can see, the size of the problem is only reduced by 1 in each recursive call.</p>
+
+                        <p>Note that the steps it take to partition is proportional to the number of elements to partition,
+                        therefore the more we can reduce the problem size, the lesser the number of steps.</p>
+
+                        <p>The best pivot would split the array into 2 equal parts, so the problem size would be reduced by half.
+                        That is, the best pivot would be the median of the elements,
+                        but to find the median you first need to sort the array (which is what we&rsquo;re doing), so that wouldn&rsquo;t work*.</p>
+
+                        <hr>
+
+                        <p>One approach that some people use is: just pick a random pivot!</p>
+
+                        <p>&hellip; &ldquo;but the partitioning algorithm assumes that the pivot is at the leftmost element!&rdquo;</p>
+
+                        <p>Easy, just swap the pivot we picked with the leftmost element,
+                        then the leftmost element becomes the pivot.</p>
+
+                        <hr>
+
+                        <p>Here&rsquo;s what happens if we were able to choose the best pivot.</p>
+
+                        <div id="ex6" style="min-height:200px"></div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="teams" class="pfblock pfblock-gray">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6 col-sm-offset-3">
+                    <div class="pfblock-header wow fadeInUp">
+                        <h2 class="pfblock-title">Our Teams</h2>
+                        <div class="pfblock-line"></div>
+                        <div class="pfblock-subtitle">
+                            This project has many contributors and they are:
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="row">
+                <div class="col-xs-12 col-sm-4 col-md-4">
+                    <div class="grid wow zoomIn">
+                        <figure class="effect-bubba">
+                            <img src="assets/images/shirshak.jpg" alt="img01"/>
+                            <figcaption>
+                                <h2>Shirshak <span>Bajgain</span></h2>
+                                <p>Made this project</p>
+                            </figcaption>
+                        </figure>
+                    </div>
+                </div>
+
+                <div class="col-xs-12 col-sm-4 col-md-4">
+                    <div class="grid wow zoomIn">
+                        <figure class="effect-bubba">
+                            <img src="assets/images/bhatta.jpg" alt="img01"/>
+                            <figcaption>
+                                <h2>Kushal <span>Bhatta</span></h2>
+                                <p>Helped for hosting this project</p>
+                            </figcaption>
+                        </figure>
+                    </div>
+                </div>
+
+                <div class="col-xs-12 col-sm-4 col-md-4">
+                    <div class="grid wow zoomIn">
+                        <figure class="effect-bubba">
+                            <img src="assets/images/mantawa.jpg" alt="img01"/>
+                            <figcaption>
+                                <h2>Yugesh <span>Bantawa</span></h2>
+                                <p>Helped for donations</p>
+                            </figcaption>
+                        </figure>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+
+    <footer id="footer">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-sm-12">
+
+                    <p class="heart">
+                        Made  in Kathmandu University
+                    </p>
+                    <p class="copyright">
+                        © 2017 Shirshak Bajgain
+                    </p>
+
+                </div>
+
+            </div>
+        </div>
+    </footer>
+
+    <div class="scroll-up">
+        <a href="#home"><i class="fa fa-angle-up"></i></a>
+    </div>
+
+    <script src="assets/js/jquery-1.11.1.min.js"></script>
+    <script src="assets/js/jquery-ui.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/js/jquery.parallax-1.1.3.js"></script>
+    <script src="assets/js/imagesloaded.pkgd.js"></script>
+    <script src="assets/js/jquery.sticky.js"></script>
+    <script src="assets/js/smoothscroll.js"></script>
+    <script src="assets/js/wow.min.js"></script>
+    <script src="assets/js/jquery.easypiechart.js"></script>
+    <script src="assets/js/waypoints.min.js"></script>
+    <script src="assets/js/jquery.cbpQTRotator.js"></script>
+    <script src="assets/js/custom.js"></script>
+</body>
+</html>
