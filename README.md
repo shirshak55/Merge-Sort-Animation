@@ -8,4 +8,4 @@ crux of quick sort.
 
 Merge sort is good but due to space complexity it is not used that often.
 
-Find more details on: https://shirshak55.github.io/Quick-Sort-Animation/
+Find more details on: https://shirshak55.github.io/quicksort-algorithm/
